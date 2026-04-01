@@ -8,7 +8,7 @@
 if _G.EmotesGUIRunning then
     getgenv().Notify({
         Title = 'CYBER | Emote',
-        Content = '⚠️ It works It actually works',
+        Content = '⚠️ Funciona. Na verdade, funciona.',
         Duration = 5
     })
     return
@@ -2751,8 +2751,8 @@ pcall(function()
 end)
 
 getgenv().Notify({
-    Title = '7yd7 | Emote',
-    Content = '⚠️ Script loading...',
+    Title = 'CYBER | Emote',
+    Content = '⚠️ Carregando script...',
     Duration = 5
 })
 
@@ -4158,7 +4158,7 @@ toggleFavorite = function(emoteId, emoteName)
     if found then
         table.remove(State.favoriteEmotes, index)
         getgenv().Notify({
-            Title = '7yd7 | Favorite System',
+            Title = 'CYBER | Favorite System',
             Content = '🗑️ Removed "' .. emoteName .. '" from favorites',
             Duration = 3
         })
@@ -4168,7 +4168,7 @@ toggleFavorite = function(emoteId, emoteName)
             name = emoteName .. " - ⭐"
         })
         getgenv().Notify({
-            Title = '7yd7 | Favorite System',
+            Title = 'CYBER | Favorite System',
             Content = '✅ Added "' .. emoteName .. '" to favorites',
             Duration = 3
         })
@@ -4200,7 +4200,7 @@ toggleFavoriteAnimation = function(animationData)
     if found then
         table.remove(State.favoriteAnimations, index)
         getgenv().Notify({
-            Title = '7yd7 | Favorite System',
+            Title = 'CYBER | Favorite System',
             Content = '🗑️ Removed "' .. animationData.name .. '" from favorites',
             Duration = 3
         })
@@ -4213,7 +4213,7 @@ toggleFavoriteAnimation = function(animationData)
             customSetName = IsCustomSetData(animationData) and (type(animationData.name) == "string" and animationData.name:gsub("%s*%-.*$", "") or animationData.name) or nil
         })
         getgenv().Notify({
-            Title = '7yd7 | Favorite System',
+            Title = 'CYBER | Favorite System',
             Content = '✅ Added "' .. animationData.name .. '" to favorites',
             Duration = 3
         })
@@ -4283,7 +4283,7 @@ applyAnimation = function(animationData)
     
     if not animate or not humanoid then
         getgenv().Notify({
-            Title = '7yd7 | Animation Error',
+            Title = 'CYBER | Animation Error',
             Content = '❌ Animate or Humanoid not found',
             Duration = 3
         })
@@ -4428,7 +4428,7 @@ handleSectorAction = function(index)
         local itemData = pickRandomItemForMode()
         if not itemData then
             getgenv().Notify({
-                Title = '7yd7 | Random',
+                Title = 'CYBER | Random',
                 Content = '? No valid random item found',
                 Duration = 3
             })
@@ -4450,7 +4450,7 @@ handleSectorAction = function(index)
                 end
                 State.CustomAnimations.Sets[State.currentCustomAnimationName][cat][name] = animIdToSave
                 State.SaveCustomAnimations(State.CustomAnimations)
-                getgenv().Notify({ Title = "7yd7 | Saved", Content = "✅ Saved " .. name, Duration = 3 })
+                getgenv().Notify({ Title = "CYBER | Saved", Content = "✅ Saved " .. name, Duration = 3 })
                 if State.RefreshCustomAnimUI then State.RefreshCustomAnimUI() end
                 if refreshCustomAnimationState then refreshCustomAnimationState(true) end
                 State.exitCustomAnimationEditor()
@@ -4802,7 +4802,7 @@ function fetchAllEmotes()
     updateEmotes()
     
     getgenv().Notify({
-        Title = '7yd7 | Emote',
+        Title = 'CYBER | Emote',
         Content = "🎉 Loaded Successfully! Total Emotes: " .. State.totalEmotesLoaded,
         Duration = 5
     })
@@ -4878,8 +4878,8 @@ end
 function searchEmotes(searchTerm)
     if State.isLoading then
         getgenv().Notify({
-            Title = '7yd7 | Emote',
-            Content = '⚠️ Loading please wait...',
+            Title = 'CYBER | Emote',
+            Content = '⚠️ Carregando, por favor aguarde...',
             Duration = 5
         })
         return
@@ -4960,8 +4960,8 @@ end
 function searchAnimations(searchTerm)
     if State.isLoading then
         getgenv().Notify({
-            Title = '7yd7 | Animation',
-            Content = '⚠️ Loading please wait...',
+            Title = 'CYBER | Animation',
+            Content = '⚠️ Carregando, por favor aguarde...',
             Duration = 5
         })
         return
@@ -5184,7 +5184,7 @@ function onCharacterAdded(character)
             character:WaitForChild("HumanoidRootPart")
             applyAnimation(getgenv().lastPlayedAnimation)
             getgenv().Notify({
-                Title = '7yd7 | Auto Reload Animation',
+                Title = 'CYBER | Auto Reload Animation',
                 Content = '🔄 The last animation was automatically \n reapplied',
                 Duration = 3
             })
@@ -5287,7 +5287,7 @@ function toggleEmoteWalk()
 
     if State.emotesWalkEnabled then
         getgenv().Notify({
-            Title = '7yd7 | Emote Freeze',
+            Title = 'CYBER | Emote Freeze',
             Content = "🔒 Emote freeze ON",
             Duration = 5
         })
@@ -5300,7 +5300,7 @@ function toggleEmoteWalk()
         end
     else
         getgenv().Notify({
-            Title = '7yd7 | Emote Freeze',
+            Title = 'CYBER | Emote Freeze',
             Content = '🔓 Emote freeze OFF',
             Duration = 5
         })
@@ -5324,7 +5324,7 @@ function toggleSpeedEmote()
 
     if State.speedEmoteEnabled then
         getgenv().Notify({
-            Title = '7yd7 | Speed Emote',
+            Title = 'CYBER | Speed Emote',
             Content = "⚡ Speed Emote ON",
             Duration = 5
         })
@@ -5332,7 +5332,7 @@ function toggleSpeedEmote()
         stopCurrentEmote()
     else
         getgenv().Notify({
-            Title = '7yd7 | Speed Emote',
+            Title = 'CYBER | Speed Emote',
             Content = '⚡ Speed Emote OFF',
             Duration = 5
         })
@@ -5421,13 +5421,13 @@ function toggleAutoReload()
     
     if getgenv().autoReloadEnabled then
         getgenv().Notify({
-            Title = '7yd7 | Auto Reload Animation',
+            Title = 'CYBER | Auto Reload Animation',
             Content = "🔄 Auto Reload ON",
             Duration = 5
         })
     else
         getgenv().Notify({
-            Title = '7yd7 | Auto Reload Animation',
+            Title = 'CYBER | Auto Reload Animation',
             Content = '🔄 Auto Reload OFF',
             Duration = 3
         })
@@ -5669,7 +5669,7 @@ function connectEvents()
                     end)
                     
                     getgenv().Notify({
-                        Title = '7yd7 | Animation',
+                        Title = 'CYBER | Animation',
                         Content = '📄 Changed to Emote > Animation Mode',
                         Duration = 3
                     })
@@ -5691,7 +5691,7 @@ function connectEvents()
                     end
                     
                     getgenv().Notify({
-                        Title = '7yd7 | Emote', 
+                        Title = 'CYBER | Emote', 
                         Content = '📄 Changed to Animation > Emote Mode',
                         Duration = 3
                     })
@@ -5977,7 +5977,7 @@ enterHUDEditor = function()
         for name, el in pairs(getMovableElements()) do
             if HUD.DefaultPositions[name] then el.Position = HUD.DefaultPositions[name] end
         end
-        getgenv().Notify({ Title = "7yd7 | HUD Editor", Content = "🔄 Positions reset to default", Duration = 3 })
+        getgenv().Notify({ Title = "CYBER | HUD Editor", Content = "🔄 Positions reset to default", Duration = 3 })
     end))
 
     if UI.Search then UI.Search.TextEditable = false; UI.Search.Active = false; pcall(function() UI.Search:ReleaseFocus() end) end
