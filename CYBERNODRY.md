@@ -2043,7 +2043,7 @@ State.enterCustomAnimationEditor = function(category, animName)
 
     if UI._2Routenumber then UI._2Routenumber.TextEditable = false; UI._2Routenumber.Active = false; pcall(function() UI._2Routenumber:ReleaseFocus() end) end
 
-    getgenv().Notify({ Title = "7yd7 | Animation Editor", Content = "🖱️ Select an animation from the wheel to set for " .. animName, Duration = 5 })
+    getgenv().Notify({ Title = "CYBER | Animation Editor", Content = "🖱️ Select an animation from the wheel to set for " .. animName, Duration = 5 })
 end
 
 State.CustomAnimTab = SettingsLib.CreateTab("Animation", 4)
@@ -2311,7 +2311,7 @@ SettingsLib.AddIconButton(CustomAnimMgtContainer, "78317476576895", function()
             if State.ApplyCustomAnimIconUI then State.ApplyCustomAnimIconUI() end
             if refreshCustomAnimationState then refreshCustomAnimationState(false) end
             popup:Destroy()
-            getgenv().Notify({ Title = "7yd7 | Animation", Content = "✅ Imported custom animations", Duration = 3 })
+            getgenv().Notify({ Title = "CYBER | Animation", Content = "✅ Imported custom animations", Duration = 3 })
         else
             getgenv().Notify({ Title = "Error", Content = "Invalid JSON", Duration = 3 })
         end
@@ -2698,7 +2698,7 @@ function HandleImportPrompt(typeStr)
                     State.isApplyingTheme = false
                     ApplyTheme(themeToApply)
                 else
-                    warn("7yd7 | Missing Default theme during import fallback")
+                    warn("CYBER | Missing Default theme during import fallback")
                 end
             end
             if d.Settings and (typeStr == "All" or typeStr == "Settings") then
@@ -4299,7 +4299,7 @@ applyAnimation = function(animationData)
     
         if not bundledItems and not animationData.isCustomSet then
         getgenv().Notify({
-            Title = '7yd7 | Animation Error', 
+            Title = 'CYBER | Animation Error', 
             Content = '??? No bundled items found',
             Duration = 3
         })
@@ -4588,7 +4588,7 @@ handleSectorAction = function(index)
             end
             State.CustomAnimations.Sets[State.currentCustomAnimationName][cat][name] = animIdToSave
             State.SaveCustomAnimations(State.CustomAnimations)
-            getgenv().Notify({ Title = "7yd7 | Saved", Content = "✅ Saved " .. name, Duration = 3 })
+            getgenv().Notify({ Title = "CYBER | Saved", Content = "✅ Saved " .. name, Duration = 3 })
             
             if State.RefreshCustomAnimUI then State.RefreshCustomAnimUI() end
             if refreshCustomAnimationState then refreshCustomAnimationState(true) end
